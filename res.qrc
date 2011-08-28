@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/pin.png</file>
+        <file>res/target.png</file>
+        <file>res/door-open-out.png</file>
+        <file>res/information.png</file>
+        <file>res/status.png</file>
+        <file>res/status-offline.png</file>
+        <file>res/control.png</file>
+        <file>res/ruby.png</file>
+        <file>res/arrow-circle-double-135.png</file>
+        <file>res/status-busy.png</file>
+    </qresource>
+</RCC>
