@@ -532,7 +532,10 @@
      <normaloff>:/res/control.png</normaloff>:/res/control.png</iconset>
    </property>
    <property name="text">
-    <string>Auto play</string>
+    <string>Start/stop</string>
+   </property>
+   <property name="toolTip">
+    <string>Start/stop</string>
    </property>
   </action>
  </widget>
