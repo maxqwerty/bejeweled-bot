@@ -170,12 +170,14 @@ MainWindow::MainWindow(QWidget *parent)
 //        QKeySequence::fromString("Alt+S"), this, SLOT(dumpField()));
 
   ui.lblTarget->installEventFilter(this);
+  ui.lblThumb->installEventFilter(this);
 
   connect(&m_timer, SIGNAL(timeout()), this, SLOT(timer()));
 
   ui.chkThumbnail->setEnabled(false);
   ui.tbtnRefresh->setEnabled(false);
   ui.actionAuto_play->setEnabled(false);
+  ui.chkMouse->setEnabled(false);
 
   loadConfig();
 }
@@ -604,6 +606,22 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
       }
     }
   }
+
+  if((obj == ui.lblThumb) && (ui.chkMouse->isChecked()))
+  {
+    if(event->type() == QEvent::MouseButtonPress)
+    {
+      QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+      int x = mouseEvent->pos().x() + ui.edOfsX->value();
+      int y = mouseEvent->pos().y() + ui.edOfsY->value();
+      //qDebug() << "clicked " << x << ", " << y;
+      if(ui.chkHelper->isChecked())
+      {
+        showHelper(x-10, y-10, x+10, y+10);
+      }
+      sendMouseLClick(m_hWnd, x, y);
+    }
+  }
   return QMainWindow::eventFilter(obj, event);
 }
 
@@ -657,10 +675,12 @@ void MainWindow::on_chkThumbnail_stateChanged(int state)
   if(state == Qt::Checked)
   {
     captureWindow(m_hWnd);
+    ui.chkMouse->setEnabled(true);
   }
   else
   {
     ui.lblThumb->setPixmap(0);
+    ui.chkMouse->setEnabled(false);
   }
 }
 

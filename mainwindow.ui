@@ -397,6 +397,13 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QCheckBox" name="chkMouse">
+           <property name="text">
+            <string>Send click to captured</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
@@ -549,6 +556,7 @@
   <tabstop>chkHelper</tabstop>
   <tabstop>chkThumbnail</tabstop>
   <tabstop>tbtnRefresh</tabstop>
+  <tabstop>chkMouse</tabstop>
  </tabstops>
  <resources>
   <include location="res.qrc"/>
