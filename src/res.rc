@@ -36,9 +36,9 @@ BEGIN
       VALUE "FileDescription",  "Bejeweled Blitz bot\0"
       VALUE "FileVersion",      VER_FILEVERSION_STR
       VALUE "InternalName",     "bejeweled_bot.exe\0"
-      VALUE "LegalCopyright",   "(c) 2011 JKollss. All rights reserved.\0"
+      VALUE "LegalCopyright",   "(c) 2012 JKollss. All rights reserved.\0"
       VALUE "OriginalFilename", "bejeweled_bot.exe\0"
-      VALUE "ProductName",      "Bot for Google+ game «Bejeweled Blitz»\0"
+      VALUE "ProductName",      "Bot for Google+ game 'Bejeweled Blitz'\0"
       VALUE "ProductVersion",   VER_PRODUCTVERSION_STR
     END
   END
@@ -59,4 +59,4 @@ BEGIN
 
 END
 
-IDI_ICON1    ICON    DISCARDABLE     "bejeweled.ico"
+IDI_ICON1    ICON    DISCARDABLE     "res\\bejeweled.ico"

@@ -46,7 +46,6 @@ protected:
   bool eventFilter(QObject* obj, QEvent* event);
 
 private:
-
   GemType guessGemType(QRgb color);
   void    extractSingleColor(QList<int>& field, GemType gem);
 
@@ -70,16 +69,14 @@ private slots:
   void on_actionAuto_play_triggered(bool on);
   void on_actionStay_on_top_triggered(bool on);
   void on_actionAbout_triggered();
-
   void on_tbtnRefresh_clicked();
-
   void on_chkThumbnail_stateChanged(int state);
 
   void timer();
-
   void dumpField();
-
   void startStop();
+
+  void on_actionExit_triggered();
 
 private:
   Ui::MainWindow ui;
@@ -100,7 +97,6 @@ private:
 };
 
 //[----------------------------------------------------------------------------]
-
 #endif // MAINWINDOW_H
-
 //[----------------------------------------------------------------------------]
+
